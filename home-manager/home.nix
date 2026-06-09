@@ -4,12 +4,13 @@
 {
   home.username = "maximilian";
   home.homeDirectory = "/home/maximilian";
-  home.stateVersion = "24.11";
+  home.stateVersion = "26.05";
 
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
     niri
+    noctalia-shell
     xwayland-satellite   # X11-Apps unter niri
     fuzzel               # App Launcher
     mako                 # Benachrichtigungen
