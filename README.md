@@ -24,6 +24,14 @@ cd nix
 home-manager switch --flake .#maximilian
 ```
 
+## Niri Setup
+
+Create a .desktop file for niri to be able to log in.
+
+```
+sudo cp ./files/niri.desktop /usr/share/wayland-sessions/
+```
+
 ## Eduroam
 
 To use eduroam correctly install it via the python script and then set it global
