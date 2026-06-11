@@ -1,5 +1,4 @@
-# ~/nix/home-manager/home.nix
-{ config, pkgs, nixgl , ... }:
+{ config, pkgs, lib , nixgl , ... }:
 
 {
   home.username = "maximilian";
@@ -13,12 +12,14 @@
   home.packages = with pkgs; [
     niri
     (config.lib.nixGL.wrap noctalia-shell)
-    xwayland-satellite   # X11-Apps unter niri
-    wl-clipboard         # Clipboard (wl-copy / wl-paste)
+    xwayland-satellite
+    wl-clipboard
 
     fd fzf
     harper
     markdownlint-cli2
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.sauce-code-pro
   ];
 
   programs.neovim = {
@@ -28,7 +29,14 @@
     vimAlias = true;
   };
 
-  # Symlinks: ~/nix/config/* → ~/.config/*
-  # xdg.configFile."niri".source = ../config/niri;
-  # xdg.configFile."nvim".source  = ../config/nvim;
+  home.activation.symlinkDotfiles = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    mkdir -p $HOME/.config
+
+    ln -sfn $HOME/nix/config/noctalia $HOME/.config/noctalia
+    ln -sfn $HOME/nix/config/niri     $HOME/.config/niri
+    ln -sfn $HOME/nix/config/nvim     $HOME/.config/nvim
+    ln -sfn $HOME/nix/config/kitty    $HOME/.config/kitty
+    ln -sfn $HOME/nix/config/fish     $HOME/.config/fish
+  '';
+
 }

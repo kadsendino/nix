@@ -1,4 +1,5 @@
 # Nix
+
 The nix configuration for my setup.
 
 ## Installing Nix
@@ -6,8 +7,7 @@ The nix configuration for my setup.
 Installing the Nix package-manager can be done using the following command:
 
 ```
-curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | \
-sh -s -- install
+sh <(curl -L https://nixos.org/nix/install) --daemon
 ```
 
 ## Activate Flakes
@@ -20,6 +20,15 @@ echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
 ## Home Manager
 
 ```
-nix run home-manager/master -- init --switch
+cd nix
+home-manager switch --flake .#maximilian
 ```
 
+## Eduroam
+
+To use eduroam correctly install it via the python script and then set it global
+
+```
+nmcli connection modify eduroam 802-1x.password-flags 0
+nmcli connection modify eduroam 802-1x.password "password"
+```

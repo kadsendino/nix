@@ -112,7 +112,7 @@
                     "enableColorization": true,
                     "icon": "snowflake",
                     "id": "ControlCenter",
-                    "useDistroLogo": true
+                    "useDistroLogo": false
                 },
                 {
                     "clockColor": "none",
@@ -257,7 +257,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Tokyo Night",
+        "predefinedScheme": "Mine",
         "schedulingMode": "off",
         "syncGsettings": true,
         "useWallpaperColors": false
@@ -728,7 +728,7 @@
     },
     "wallpaper": {
         "automationEnabled": false,
-        "directory": "/home/maximilian/Bilder/wallpaper",
+        "directory": "/home/maximilian/nix/wallpaper",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "favorites": [
