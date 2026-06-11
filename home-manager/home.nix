@@ -14,6 +14,8 @@
     (config.lib.nixGL.wrap noctalia-shell)
     xwayland-satellite
     wl-clipboard
+    (config.lib.nixGL.wrap kitty)
+    fish
 
     fd fzf
     harper
