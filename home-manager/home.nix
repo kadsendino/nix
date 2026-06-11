@@ -1,5 +1,5 @@
 # ~/nix/home-manager/home.nix
-{ config, pkgs, ... }:
+{ config, pkgs, nixgl , ... }:
 
 {
   home.username = "maximilian";
@@ -7,14 +7,18 @@
   home.stateVersion = "26.05";
 
   programs.home-manager.enable = true;
+  targets.genericLinux.nixGL.packages = nixgl.packages;  # that's all you need
+
 
   home.packages = with pkgs; [
     niri
-    noctalia-shell
+    (config.lib.nixGL.wrap noctalia-shell)
     xwayland-satellite   # X11-Apps unter niri
-    fuzzel               # App Launcher
-    mako                 # Benachrichtigungen
     wl-clipboard         # Clipboard (wl-copy / wl-paste)
+
+    fd fzf
+    harper
+    markdownlint-cli2
   ];
 
   programs.neovim = {
@@ -25,6 +29,6 @@
   };
 
   # Symlinks: ~/nix/config/* → ~/.config/*
-  xdg.configFile."niri".source = ../config/niri;
-  xdg.configFile."nvim".source  = ../config/nvim;
+  # xdg.configFile."niri".source = ../config/niri;
+  # xdg.configFile."nvim".source  = ../config/nvim;
 }
