@@ -329,7 +329,7 @@ animations {
 
 // Open Chromium maximized
 window-rule {
-    match app-id="chromium-browser"
+    match app-id="firefox"
     match app-id="freetube"
     open-maximized true
 }
@@ -376,7 +376,7 @@ window-rule {
 switch-events {
     // lid-open { spawn "swaylock" "--image" "/home/maximilian/.wallpaper/kurzgesagt.jpg"; }
     // lid-open { spawn "notify-send" "The laptop lid is open!"; }
-    lid-close { spawn  "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+    // lid-close { spawn  "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
 }
 
 binds {

@@ -110,7 +110,7 @@
                     "colorizeSystemText": "none",
                     "customIconPath": "",
                     "enableColorization": true,
-                    "icon": "snowflake",
+                    "icon": "north-star",
                     "id": "ControlCenter",
                     "useDistroLogo": false
                 },
@@ -394,7 +394,7 @@
         "animationDisabled": false,
         "animationSpeed": 1.5,
         "autoStartAuth": false,
-        "avatarImage": "/home/maximilian/Bilder/face.jpg",
+        "avatarImage": "/home/maximilian/nix/files/profile.png",
         "boxRadiusRatio": 1,
         "clockFormat": "hh\\nmm",
         "clockStyle": "custom",
@@ -496,7 +496,7 @@
         "weatherTaliaMascotAlways": false
     },
     "network": {
-        "bluetoothAutoConnect": false,
+        "bluetoothAutoConnect": true,
         "bluetoothDetailsViewMode": "grid",
         "bluetoothHideUnnamedDevices": false,
         "bluetoothRssiPollIntervalMs": 10000,

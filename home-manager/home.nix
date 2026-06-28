@@ -5,20 +5,22 @@
   home.homeDirectory = "/home/maximilian";
   home.stateVersion = "26.05";
 
-  programs.home-manager.enable = true;
-  targets.genericLinux.nixGL.packages = nixgl.packages;  # that's all you need
+  nixpkgs.config.allowUnfree = true;
 
+  programs.home-manager.enable = true;
+  targets.genericLinux.nixGL.packages = nixgl.packages;
 
   home.packages = with pkgs; [
     niri
     (config.lib.nixGL.wrap noctalia-shell)
-    xwayland-satellite
+    (config.lib.nixGL.wrap xwayland-satellite)
     wl-clipboard
     (config.lib.nixGL.wrap kitty)
     fish
-
+    swaylock
     fd fzf
     harper
+    rust-analyzer
     markdownlint-cli2
     nerd-fonts.jetbrains-mono
     nerd-fonts.sauce-code-pro
