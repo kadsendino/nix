@@ -8,6 +8,7 @@
   home.activation.symlinkDotfiles = lib.hm.dag.entryAfter ["writeBoundary"] ''
     mkdir -p $HOME/.config
 
+    rm -rf $HOME/.config/nvim
     ln -sfn $HOME/nix/config/nvim     $HOME/.config/nvim
     ln -sfn $HOME/nix/config/noctalia $HOME/.config/noctalia
     ln -sfn $HOME/nix/config/niri     $HOME/.config/niri
