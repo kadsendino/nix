@@ -6,8 +6,6 @@
   home.stateVersion = "26.05";
 
 
-  # PAM authentication fix for non-NixOS (lock screen auth via noctalia/quickshell)
-  pamShim.enable = true;
 
   home.activation.symlinkDotfiles = lib.hm.dag.entryAfter ["writeBoundary"] ''
     mkdir -p $HOME/.config
@@ -21,21 +19,16 @@
   '';
 
   nixpkgs.config.allowUnfree = true;
-
   programs.home-manager.enable = true;
   targets.genericLinux.nixGL.packages = nixgl.packages;
 
   home.packages = with pkgs; [
-    niri
-    (config.lib.nixGL.wrap (config.lib.pamShim.replacePam noctalia-shell))
-    (config.lib.nixGL.wrap xwayland-satellite)
     (config.lib.nixGL.wrap kitty)
     fish
-    swaylock
   ];
 
   imports = [
     ./modules/nvim
-    # ./modules/niri
+    ./modules/niri
   ];
 }
