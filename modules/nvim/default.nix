@@ -18,6 +18,6 @@
       # lsp servers, formatters, linters
     ];
 
-    extraLuaConfig = builtins.readFile ./init.lua;
+    # initLua = builtins.readFile ../../config/nvim/init.lua;
   };
 }

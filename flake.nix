@@ -8,9 +8,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixgl.url = "github:nix-community/nixGL";
+    # PAM shim for non-NixOS systems
+    pam-shim = {
+      url = "github:Cu3PO42/pam_shim/next";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, nixgl , ... }:
+  outputs = { nixpkgs, home-manager, nixgl, pam-shim , ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -18,7 +23,10 @@
       homeConfigurations."maximilian" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = { inherit nixgl; };
-	modules = [ ./home.nix ];
+        modules = [
+          ./home.nix
+          pam-shim.homeModules.default
+        ];
       };
     };
 }

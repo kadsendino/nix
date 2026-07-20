@@ -21,7 +21,7 @@ echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
 
 ```
 cd nix
-home-manager switch --flake .#maximilian
+nix run home-manager -- switch --flake .#maximilian
 ```
 
 ## Niri Setup
