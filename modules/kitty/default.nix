@@ -1,7 +1,14 @@
-{ config, pkgs, lib, nixgl, ... }:
+{ config, pkgs, lib, nixgl, spotify-visualizer , ... }:
 {
   home.packages = with pkgs; [
     (config.lib.nixGL.wrap kitty)
     fish
+
+    #Terminal Applications
+    cava
+    pipes
+    cbonsai
+    fastfetch
+    spotify-visualizer.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }

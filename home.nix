@@ -1,4 +1,4 @@
-{ config, pkgs, lib , nixgl , ... }:
+{ config, pkgs, lib , nixgl, spotify-visualizer , ... }:
 
 {
   home.username = "maximilian";

@@ -13,16 +13,20 @@
       url = "github:Cu3PO42/pam_shim/next";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    spotify-visualizer = {
+      url = "github:kadsendino/spotify-visualizer";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, nixgl, pam-shim , ... }:
+  outputs = { nixpkgs, home-manager, nixgl, pam-shim, spotify-visualizer , ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in {
       homeConfigurations."maximilian" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = { inherit nixgl; };
+        extraSpecialArgs = { inherit nixgl spotify-visualizer; };
         modules = [
           ./home.nix
           pam-shim.homeModules.default
