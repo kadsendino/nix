@@ -5,8 +5,6 @@
   home.homeDirectory = "/home/maximilian";
   home.stateVersion = "26.05";
 
-
-
   home.activation.symlinkDotfiles = lib.hm.dag.entryAfter ["writeBoundary"] ''
     mkdir -p $HOME/.config
 
@@ -22,13 +20,12 @@
   programs.home-manager.enable = true;
   targets.genericLinux.nixGL.packages = nixgl.packages;
 
-  home.packages = with pkgs; [
-    (config.lib.nixGL.wrap kitty)
-    fish
-  ];
+  # home.packages = with pkgs; [
+  # ];
 
   imports = [
     ./modules/nvim
     ./modules/niri
+    ./modules/kitty
   ];
 }
