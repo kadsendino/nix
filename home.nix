@@ -17,7 +17,8 @@
   '';
 
   nixpkgs.config.allowUnfree = true;
-  programs.home-manager.enable = true;
+
+  #necessary for nixGL 
   targets.genericLinux.nixGL.packages = nixgl.packages;
 
   # home.packages = with pkgs; [

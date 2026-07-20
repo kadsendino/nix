@@ -4,10 +4,10 @@ The nix configuration for my setup.
 
 ## Installing Nix
 
-Installing the Nix package-manager can be done using the following command:
+Installing the Nix package-manager can be done using `apt`, `pacman` or what specific package manager your OS uses. You may Own your nix directiory:
 
 ```
-sh <(curl -L https://nixos.org/nix/install) --daemon
+sudo chown -R maximilian /nix
 ```
 
 ## Activate Flakes
