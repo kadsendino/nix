@@ -18,7 +18,7 @@
       homeConfigurations."maximilian" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = { inherit nixgl; };
-        modules = [ ./home-manager/home.nix ];
+	modules = [ ./home.nix ];
       };
     };
 }
