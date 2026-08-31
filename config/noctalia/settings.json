@@ -37,21 +37,21 @@
         "visualizerType": "linear",
         "volumeFeedback": false,
         "volumeFeedbackSoundFile": "",
-        "volumeOverdrive": false,
+        "volumeOverdrive": true,
         "volumeStep": 5
     },
     "bar": {
         "autoHideDelay": 500,
         "autoShowDelay": 150,
-        "backgroundOpacity": 0.8,
-        "barType": "floating",
+        "backgroundOpacity": 1,
+        "barType": "simple",
         "capsuleColorKey": "none",
-        "capsuleOpacity": 0.5,
+        "capsuleOpacity": 0.7000000000000001,
         "contentPadding": 2,
         "density": "spacious",
         "displayMode": "always_visible",
         "enableExclusionZoneInset": true,
-        "fontScale": 1,
+        "fontScale": 1.05,
         "frameRadius": 12,
         "frameThickness": 8,
         "hideOnOverview": true,
@@ -257,7 +257,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Kanagawa Dragon",
+        "predefinedScheme": "Peche",
         "schedulingMode": "off",
         "syncGsettings": true,
         "useWallpaperColors": false
@@ -386,7 +386,7 @@
         "showDockIndicator": false,
         "showLauncherIcon": false,
         "sitOnFrame": false,
-        "size": 1
+        "size": 1.4000000000000001
     },
     "general": {
         "allowPanelsOnScreenWithoutBar": true,
@@ -675,10 +675,6 @@
             },
             {
                 "enabled": true,
-                "id": "zathura"
-            },
-            {
-                "enabled": true,
                 "id": "yazi"
             },
             {
@@ -708,6 +704,10 @@
             {
                 "enabled": true,
                 "id": "helix"
+            },
+            {
+                "enabled": true,
+                "id": "zathura"
             }
         ],
         "enableUserTheming": true

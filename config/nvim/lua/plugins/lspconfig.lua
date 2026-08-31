@@ -25,12 +25,12 @@ return {
 
     -- Harper LS konfigurieren (optional, shown with defaults)
     vim.lsp.config("harper_ls", {
-      filetypes = { "tex", "plaintex" },
+      filetypes = { "latex", "tex", "plaintex" },
       settings = {
         ["harper-ls"] = {
           linters = {
             SpellCheck = true,
-            SpelleNumbers = false,
+            SpellNumbers = false,
             AnA = true,
             SentenceCapitalization = true,
             UnclosedQuotes = true,
@@ -39,6 +39,10 @@ return {
             RepeatedWords = true,
             Spaces = false,
           },
+          codeActions = {
+            ForceStable = false,
+          },
+          maxFileLength = 240000,
         },
       },
     })

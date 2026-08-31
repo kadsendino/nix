@@ -5,6 +5,7 @@
 
   home.packages = with pkgs; [
     niri
+    wl-mirror
     (config.lib.nixGL.wrap (config.lib.pamShim.replacePam noctalia-shell))
     (config.lib.nixGL.wrap xwayland-satellite)
   ];

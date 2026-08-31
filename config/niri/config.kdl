@@ -602,6 +602,8 @@ binds {
     // Center all fully visible columns on screen.
     Mod+Ctrl+C { center-visible-columns; }
 
+    Mod+M repeat=false { spawn-sh "wl-mirror $(niri msg --json focused-output | jq -r .name)"; }
+
     // Finer width adjustments.
     // This command can also:
     // * set width in pixels: "1000"

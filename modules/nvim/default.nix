@@ -13,8 +13,6 @@
       harper
       rust-analyzer
       markdownlint-cli2
-      nerd-fonts.jetbrains-mono
-      nerd-fonts.sauce-code-pro
       # lsp servers, formatters, linters
     ];
 

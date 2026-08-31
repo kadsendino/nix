@@ -3,6 +3,10 @@
   home.packages = with pkgs; [
     (config.lib.nixGL.wrap kitty)
     fish
+ 
+    #Fonts
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.sauce-code-pro
 
     #Terminal Applications
     cava
